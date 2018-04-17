@@ -1,16 +1,20 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// All of the Node.js APIs are available in this process.
-
-import React from 'react'
+import React from "react";
 import ReactDOM from 'react-dom'
 
 class App extends React.Component {
-  render () {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: 'It\'s a text!'
+    };
+  }
+
+  render() {
     return (
-      <h1>Minimalistic Electron React Boilerplate Code :)</h1>
+      <div>{this.state.text}</div>
     )
   }
 }
 
-ReactDOM.render(<App/>,document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
